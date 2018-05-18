@@ -1,0 +1,63 @@
+﻿@model ContactViewModel
+@{
+    ViewBag.Titile = "Contact Page";
+}
+
+@section scripts {
+    <script src='@Url.Content("~/lib/jquery-validation/dist/jquery.validate.min.js")'></script>
+    <script src='@Url.Content("~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js")'></script>
+}
+
+<div>
+    <form method="post">
+        <div>
+            <div asp-validation-summary="ModelOnly"></div>
+        </div>
+        <div class="form-group">
+            <!-- Text Name -->
+            <label class="col-sm-2 col-form-label" asp-for="Name">Your Name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" asp-for="Name" />
+            </div>
+            <span asp-validation-for="Name"></span>
+        </div>
+
+        <!-- Text Email -->
+        <div class="form-group">
+            <label class="col-sm-2 col-form-label" asp-for="Email">Email:</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" asp-for="Email" />
+            </div>
+            <span asp-validation-for="Email"></span>
+        </div>
+
+        <!-- Text Subject -->
+        <div class="form-group">
+            <label class="col-sm-2 col-form-label" asp-for="Subject">Subject:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" asp-for="Subject" />
+            </div>
+            <span asp-validation-for="Subject"></span>
+        </div>
+
+        <!-- TextArea Message -->
+        <div class="form-group">
+            <label class="col-sm-2 col-form-label" asp-for="Message">Message:</label>
+            <div class="col-sm-10">
+                <textarea rows="10" class="form-control" asp-for="Message"></textarea>
+            </div>
+            <span asp-validation-for="Message"></span>
+        </div>
+        <!-- Button submit -->
+        <div class="form-row text-center mt-4">
+            <div class="col-2">
+                <button class="btn btn-primary" type="submit">Send Message</button>
+            </div>
+        </div>
+        <div class="mt-3">
+            <div class="text-success">
+                @ViewBag.UserMessage
+            </div>
+        </div>
+    </form>
+</div>

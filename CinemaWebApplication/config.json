@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "CinemaContextString": "server=DESKTOP-D8NCIMI\\SQLEXPRESS;Database=CinemaBooking;user=sa;password=nghich;Integrated Security=true;MultipleActiveResultSets=true;"
+  }
+}
